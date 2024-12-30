@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batman Game Landing Page</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: #000 url('https://via.placeholder.com/1920x1080?text=Batman+Background') no-repeat center/cover;
+      background-size: cover;
+      overflow-x: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    a {
+      text-decoration: none;
+      color: #FFD700;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      position: relative;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #FFD700;
+    }
+    header nav a {
+      margin: 0 15px;
+      font-size: 1rem;
+      position: relative;
+      padding: 5px;
+    }
+    header nav a:hover {
+      color: #fff;
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+    .batman-logo {
+      position: absolute;
+      top: 80px; /* Adjusted to place it below the header */
+      right: 20px;
+      width: 70px; /* Reduced size */
+      height: 70px; /* Reduced size */
+      border-radius: 50%; /* Make it round */
+      animation: fadeInLogo 1s ease-out;
+    }
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 80vh;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      animation: zoomIn 1.5s ease-out;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      margin: 20px 0;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      animation: fadeInText 1s ease-out;
+    }
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: slideUp 1s ease-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .hero button {
+      background: #FFD700;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .hero button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+    .features,
+    .villains {
+      padding: 50px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.9);
+      animation: fadeInSection 1.5s ease-out;
+    }
+    @keyframes fadeInSection {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .features h3,
+    .villains h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInText 1s ease-out;
+    }
+    .features .feature-list,
+    .villains .villain-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features .feature-list div,
+    .villains .villain-list div {
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .features .feature-list div:hover,
+    .villains .villain-list div:hover {
+      background: #FFD700;
+      color: #000;
+      transform: translateY(-10px);
+    }
+    .features .feature-list div img,
+    .villains .villain-list div img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .features .feature-list div:hover img,
+    .villains .villain-list div:hover img {
+      transform: scale(1.2);
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BATMAN GAME</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#villains">Villains</a>
+      <a href="#download">Download</a>
+    </nav>
+    <!-- Add the Batman logo here -->
+  </header>
+
+  <!-- Batman Logo just below header -->
+  <img src="images\Batman logo.png" alt="Batman Logo" class="batman-logo">
+
+  <section class="hero">
+    <h2>Step into the Shadows</h2>
+    <p>Unleash your inner hero and join Batman in a thrilling adventure to save Gotham City from chaos.</p>
+    <button onclick="alert('Game Coming Soon!')">Pre-Order Now</button>
+  </section>
+
+  <section id="features" class="features">
+    <h3>Game Features</h3>
+    <div class="feature-list">
+      <div>
+        <img src="images\Gotham Knights.jpg" alt="Icon">
+        <h4>Open World Gotham</h4>
+        <p>Explore Gotham City with incredible detail and dynamic day-night cycles.</p>
+      </div>
+      <div>
+        <img src="images\Advanced combat.jpg" alt="Icon">
+        <h4>Advanced Combat</h4>
+        <p>Master Batman's fighting style with innovative gadgets and upgrades.</p>
+      </div>
+      <div>
+        <img src="images\batmobile.jpg" alt="Icon">
+        <h4>Batmobile</h4>
+        <p>Drive the iconic Batmobile in high-speed chases and epic battles.</p>
+      </div>
+      <div>
+        <img src="images\detective mode.jpg" alt="Icon">
+        <h4>Detective Mode</h4>
+        <p>Uncover mysteries with enhanced forensic tools and technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="villains" class="villains">
+    <h3>Notorious Villains</h3>
+    <div class="villain-list">
+      <div>
+        <img src="images\joker.jpg" alt="Joker">
+        <h4>The Joker</h4>
+        <p>Face off against Batman's arch-nemesis in a mind-bending showdown.</p>
+      </div>
+      <div>
+        <img src="images\penguin.jpg" alt="Penguin">
+        <h4>The Penguin</h4>
+        <p>Thwart Penguin’s criminal empire and restore peace to Gotham.</p>
+      </div>
+      <div>
+        <img src="images\two face.jpg" alt="Two-Face">
+        <h4>Two-Face</h4>
+        <p>Make tough moral decisions while battling Harvey Dent’s duality.</p>
+      </div>
+      <div>
+        <img src="images\scarecrow.png" alt="Scarecrow">
+        <h4>Scarecrow</h4>
+        <p>Overcome fear-inducing challenges with Scarecrow’s terrifying toxins.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Batman Game. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
+
